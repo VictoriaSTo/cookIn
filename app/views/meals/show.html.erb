@@ -1,0 +1,9 @@
+<h2><%= @meal.name %></h1>
+<ul>
+    <li><%= link_to "Edit this meal", edit_meal_path %></li>
+</ul>
+    <p><%= @meal.description %></p>
+    <p><%= "$#{@meal.price}" %></p>
+<ul>
+    <li><%= link_to "Back to list", meals_path %></li>
+</ul>
