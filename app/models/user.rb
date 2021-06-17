@@ -6,4 +6,5 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   has_many :meals
+  has_many :bookings
 end
