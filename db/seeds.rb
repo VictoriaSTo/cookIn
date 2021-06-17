@@ -7,9 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "faker"
 # TODO: Write a seed to insert 100 posts in the database
+
+puts "destroying meals"
+Meal.destroy_all
+puts "destroyed"
 10.times do
-  User.create(
-    name: Faker::Name.unique.name,
-    description: Faker::Hipster.sentences(number: 1)
-  )
+    user = User.create!(name: Faker::FunnyName.name, description: Faker::Hipster.sentences(number: 1), email: Faker::Internet.email, password: 111111)
+    rand(5).times do
+      meal = Meal.create!(name: Faker::Food.dish, description: Faker::Food.description, price: rand(10..500), user: user)
+    end
 end
+
+puts "created #{Meal.count} meals"
