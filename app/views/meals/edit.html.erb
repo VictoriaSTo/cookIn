@@ -1,2 +1,9 @@
-<h1>Meals#edit</h1>
-<p>Find me in app/views/meals/edit.html.erb</p>
+<%= simple_form_for [ @user, @meal ] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.submit %>
+<% end %>
+<ul>
+    <li><%= link_to "Back to list", meals_path %></li>
+</ul>
