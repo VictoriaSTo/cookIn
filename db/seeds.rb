@@ -18,4 +18,8 @@ puts "destroyed"
     end
 end
 
+5.times do
+ booking = Booking.create!(date: DateTime.now + 1.day, location: "Shenzhen" ,user: User.all.sample, meal: Meal.all.sample)
+end
+
 puts "created #{Meal.count} meals"
