@@ -1,0 +1,19 @@
+<div class="container">
+  <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+</div>
+
+<h1><%= @user.name %>'s profile!</h1>
+<div class="container">
+  <ol>
+    <li>User name: <%= @user.name %></li>
+    <li>User email: <%= @user.description %></li>
+  </ol>
+  <div class="container">
+    <div>
+      <%= link_to "My Meals", "#", class: "btn btn-ghost" %>
+    </div>
+    <div>
+      <%= link_to "My Bookings", "#", class: "btn btn-ghost" %>
+    </div>
+  </div>
+</div>
