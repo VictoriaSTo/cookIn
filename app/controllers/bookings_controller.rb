@@ -1,4 +1,7 @@
 class BookingsController < ApplicationController
+    def my_bookings
+    end
+
     def bookings_as_a_chef
         @bookings = Booking.where(meal: current_user.meals)
     end

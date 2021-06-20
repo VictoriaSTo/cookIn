@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get "/my-chef-bookings", to: "bookings#bookings_as_a_chef"
   get "/my-eater-bookings", to: "bookings#bookings_as_an_eater"
   resources :bookings, only: [:destroy]
+  get "/my-bookings", to: "bookings#my_bookings"
 end
-
