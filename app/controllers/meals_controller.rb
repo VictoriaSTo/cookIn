@@ -40,11 +40,7 @@ class MealsController < ApplicationController
   private
 
   def meal_params
-    params.require(:meal).permit(:name, :description, :price, :user)
-  end
-
-  def user_params
-    params.require(:user).permit(:name, :description)
+    params.require(:meal).permit(:name, :description, :price)
   end
 
   def set_meal
