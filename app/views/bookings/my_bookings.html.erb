@@ -1,3 +1,11 @@
 <h1>My Bookings</h1>
-<%= link_to "I'm a chef", my_chef_bookings_path %>
-<%= link_to "I'm a foodie", my_eater_bookings_path %>
+<div class="container">
+<div class="justify-content-center">
+  <div class="row">
+    <li class = "back"><%= link_to "I'm a foodie", my_eater_bookings_path %></li>
+  </div> 
+  <div class="row">
+    <li class = "submit"><%= link_to "I'm a chef", my_chef_bookings_path %></li>
+  </div>
+  </div>
+</div>
