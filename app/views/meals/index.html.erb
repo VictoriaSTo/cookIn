@@ -1,18 +1,22 @@
-<h1>All meals</h1>
-<div class="card" style="width: 18rem; flex-direction: row;">
-  <% @meals.each do |meal| %>
-    <div class="card-body">
-    <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
-    <h5 class="card-title"><%= meal.user.name %></h5>
-     <h5 class="card-title"><%= link_to meal.name, meal_path(meal)%></h5>
-    <p class="card-text">Loren ipsum and shit, a medium-long description in which combinations of letters form words which are associated with meaning</p>
-        <%= link_to "Delete",
-        meal_path(meal),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
+
+<div class="container">
+  <h1>All meals</h1>
+  <div class="row">
+    <% @meals.each do |meal| %>
+      <div class="col-sm">
+        <div class="card mt-2" style="width: 18rem;">
+          <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
+          <h5 class="card-title"><%= meal.user.name %></h5>
+          <h5 class="card-title"><%= link_to meal.name, meal_path(meal)%></h5>
+          <p class="card-text">Loren ipsum and shit, a medium-long description in which combinations of letters form words which are associated with meaning</p>
+          <%= link_to "Delete Now!!",
+          meal_path(meal),
+          class: "btn btn-primary",
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
-
-
 
