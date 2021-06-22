@@ -22,11 +22,11 @@
 
 h1 {
   margin: 0;
-  color: #d3d3cf;
+  color: #FFFFFF;
   font-size: 100px;
   font-family: Garamond;
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   padding-top: 10px;
 }
 
@@ -39,10 +39,55 @@ h1 {
 
 }
 
-.btn {
-  position: relative;
-  font-family: Garamond;
-  color: #d3d3cf;
-  outline-color: white;
+a.button1{
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Helvetica',lighter;
+  font-weight:300;
+  color:#FFFFFF;
+  text-align:center;
+  transition: all 0.4s;
+}
+a.button1:hover{
+  color:#000000;
+  background-color:#FFFFFF;
+}
+@media all and (max-width:30em){
+  a.button1{
+  display:block;
+  margin:0.4em auto;
+  }
 }
 
+
+// .btn {
+//   position: relative;
+//   font-family: Garamond;
+//   color: #d3d3cf;
+//   outline-color: white;
+// }
+
+
+// .bouncy{
+//   animation:bouncy 2.5s infinite linear;
+//   position:relative;
+//   color: #efefed;
+//   font-family:Garamond;
+//   outline-color:#efefed
+// }
+// @keyframes bouncy {
+//   0%{top:0em}
+//   40%{top:0em}
+//   43%{top:-0.9em}
+//   46%{top:0em}
+//   48%{top:-0.4em}
+//   50%{top:0em}
+//   60%{top:0em}
+//   70%{top:0em}
+//   100%{top:0em;}
+// }
