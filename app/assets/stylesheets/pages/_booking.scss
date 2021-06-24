@@ -1,6 +1,6 @@
-a {
-    color: #0e0000;
-    text-decoration: none;
-    background-color: transparent;
-    margin-bottom: 16px;
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px;
 }
