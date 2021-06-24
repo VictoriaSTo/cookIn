@@ -6,16 +6,18 @@
         <ul>
           <%= link_to "Edit meal", edit_meal_path %>
         </ul>
-        <div class="form">
+        <div class="form-container">
           <p class="lead"><%= @meal.description %></p>
           <p class="lead"><%= "$#{@meal.price}" %></p>
           <hr class="my-4">
-          <%= simple_form_for [@meal, @booking] do |f| %>
+          <div class="form">
+            <%= simple_form_for [@meal, @booking] do |f| %>
             <%= f.input :date %>
             <%= f.input :location %>
-            <%= f.submit %>
-          <div class="buttons">
-          <% end %>
+            <%= f.submit class: 'submit' %>
+            <div class="buttons">
+            <% end %>
+            </div>
           </div>
         </div>
       </div>
