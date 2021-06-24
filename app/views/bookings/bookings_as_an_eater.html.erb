@@ -1,13 +1,22 @@
+<h1>My Upcoming Meals</h1>
 <% @bookings.each do |booking| %>
-<h2><%= booking.meal.name %></h2>
-</ul>
-    <p><%= booking.location %></p>
-    <p><%= booking.date %></p>
-<ul>
-    <li><%= link_to "Cancel this booking", 
-                  booking_path(booking), 
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>                  
-</ul>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h2><%= booking.meal.name %></h2>
+        </ul>
+            <p><%= booking.location %></p>
+            <p><%= booking.date %></p>
+        <ul>
+            <li><%= link_to "Cancel this booking",
+                          booking_path(booking),
+                          method: :delete,
+                          data: { confirm: "Are you sure?" } %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 <% end %>
 <li><%= link_to "Back to my bookings", my_bookings_path %></li>
