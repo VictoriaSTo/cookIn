@@ -4,6 +4,11 @@
 </ul>
     <p><%= @meal.description %></p>
     <p><%= "$#{@meal.price}" %></p>
+<%= simple_form_for [@meal, @booking] do |f| %>
+  <%= f.input :date %>
+  <%= f.input :location %>
+  <%= f.submit %>
+<% end %>
 <ul>
     <li><%= link_to "Back to list", meals_path %></li>
 </ul>

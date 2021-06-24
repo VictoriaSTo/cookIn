@@ -1,9 +1,16 @@
-<%= simple_form_for [ @user, @meal ] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.submit %>
-<% end %>
-<ul>
-    <li><%= link_to "Back to list", meals_path %></li>
-</ul>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <div class="form">
+          <%= simple_form_for (@meal) do |f| %>
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.input :price %>
+            <%= f.submit class: 'submit'%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
