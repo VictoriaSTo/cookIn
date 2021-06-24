@@ -25,3 +25,38 @@
     }
 }
 
+.red_button {
+    padding: 4px;
+    background: #fd1015;
+    color: white;
+    border: 1px;
+    border-radius: 16px;
+    box-shadow: 1px 2px 4px 0px #888888;
+    text-decoration: none;
+    width: 140px;
+    height: 55px;
+    text-align: center;
+
+    &:hover {
+        color: black;
+        text-decoration: none;
+    }
+}
+
+.gray_button {
+    padding: 11px;
+    background: gray;
+    color: white;
+    border: 1px;
+    border-radius: 16px;
+    box-shadow: 1px 2px 4px 0px #888888;
+    text-decoration: none;
+    width: 140px;
+    height: 40px;
+    text-align: center;
+
+    &:hover {
+        color: black;
+        text-decoration: none;
+    }
+}
