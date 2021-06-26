@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :meals do
     resources :bookings, only: [ :new, :create ]
   end
+  get "/my-meals", to: "meals#my_meals"
   get "/my-chef-bookings", to: "bookings#bookings_as_a_chef"
   get "/my-eater-bookings", to: "bookings#bookings_as_an_eater"
   resources :bookings, only: [:destroy]

@@ -1,11 +1,8 @@
 <div class="container py-5">
   <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
+    <div class="col-6">
       <div class="bg-white rounded p-3 shadow">
         <h2 class="display-4"><%= @meal.name %></h1>
-        <ul>
-          <%= link_to "Edit meal", edit_meal_path %>
-        </ul>
         <div class="form-container">
           <p class="lead"><%= @meal.description %></p>
           <p class="lead"><%= "$#{@meal.price}" %></p>

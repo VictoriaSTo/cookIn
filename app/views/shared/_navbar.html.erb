@@ -1,4 +1,3 @@
-
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to meals_path, class: "navbar-brand" do %>
     <%= image_tag "cookin.jpg", class:"avatar" %>
@@ -10,7 +9,8 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav">
+    <div class="flex-container">
       <li class="nav-item active">
         <%= form_tag meals_path, method: :get do %>
           <%= text_field_tag :query,
@@ -18,15 +18,22 @@
             class: "form-control",
             placeholder: "Find a meal"
           %>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
+      </li>
+      <li class="nav-item active">
+        <%= submit_tag "Search", class: "red_button" %>
         <% end %>
       </li>
+    </div>
+
       <% if user_signed_in? %>
         <div class="pages">
           <div class="d-flex flex-row-reverse bd-highlight">
               <div class= "p-2 bd-highlight"><%= link_to "Home", meals_path, class: "nav-link active" %></div>
+              <% if policy(Meal).create? %>
               <div class= "p-2 bd-highlight"><%= link_to "Add a new meal", new_meal_path, class: "nav-link active" %></div>
+              <% end %>
               <div class= "p-2 bd-highlight"><%= link_to "My bookings", my_bookings_path, class: "nav-link active" %></div>
+              <div class= "p-2 bd-highlight"><%= link_to "My meals", my_meals_path, class: "nav-link active" %></div>
           </div>
         </div>
         <li class="nav-item dropdown">

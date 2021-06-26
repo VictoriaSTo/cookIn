@@ -1,5 +1,3 @@
-<div class="container" alt="chef">
-
   <div class="container">
     <h1>All meals</h1>
     <div class="row">
@@ -7,13 +5,18 @@
         <div class="col-sm">
           <div class="card mt-2" style="width: 18rem;">
             <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
-            <h5 class="card-title"><%= meal.user.name %></h5>
             <h5 class="card-title"><%= link_to meal.name, meal_path(meal)%></h5>
             <p class="card-text">Loren ipsum and shit, a medium-long description in which combinations of letters form words which are associated with meaning</p>
+            <div class="flex-container">
+                <%= link_to "Edit", edit_meal_path(meal), class: "black_button" %>
+                <%= link_to "Delete",
+                    meal_path(meal),
+                    class: "black_button",
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+            </div>
           </div>
         </div>
       <% end %>
     </div>
   </div>
- </div>
-
