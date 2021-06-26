@@ -7,6 +7,7 @@
           <%= link_to "Edit meal", edit_meal_path %>
         </ul>
         <div class="form-container">
+          <p class="lead"><%= @meal.meal_type %></p>
           <p class="lead"><%= @meal.description %></p>
           <p class="lead"><%= "$#{@meal.price}" %></p>
           <hr class="my-4">
