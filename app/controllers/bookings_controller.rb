@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
-    def my_bookings
+    skip_after_action :verify_authorized
+
+    def my_bookings       
     end
 
     def bookings_as_a_chef
@@ -15,7 +17,7 @@ class BookingsController < ApplicationController
         @meal = Meal.find(params[:meal_id])
         @booking.user = current_user
         @booking.meal = @meal
-               
+        
         if @booking.save
           redirect_to my_eater_bookings_path
         else

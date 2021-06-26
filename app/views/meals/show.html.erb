@@ -3,9 +3,6 @@
     <div class="col-6">
       <div class="bg-white rounded p-3 shadow">
         <h2 class="display-4"><%= @meal.name %></h1>
-        <ul>
-          <%= link_to "Edit meal", edit_meal_path %>
-        </ul>
         <div class="form-container">
           <p class="lead"><%= @meal.meal_type %></p>
           <p class="lead"><%= @meal.description %></p>
