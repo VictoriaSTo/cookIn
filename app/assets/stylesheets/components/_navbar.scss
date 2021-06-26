@@ -23,6 +23,16 @@
     background: #090A0B;
 }
 
+.flex-container {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  padding-left: 8px;
+}
 // .nav-link.link {
 //   color: white;
 // }
