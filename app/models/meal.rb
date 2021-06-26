@@ -3,7 +3,8 @@ class Meal < ApplicationRecord
   has_many :bookings, dependent: :destroy
   validates :name, presence: true
   validates :description, presence: true
-  validates :price, presence: true, numericality: { only_integer: true, :in => 10..500 }
+  validates :price, presence: true, numericality: { only_integer: true, :in => 1..50 }
+  validates :meal_type, presence: true
   include PgSearch::Model
   pg_search_scope :search_by_name_and_description,
     against: [ :name, :description ],
