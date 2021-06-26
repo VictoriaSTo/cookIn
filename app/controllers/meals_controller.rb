@@ -1,5 +1,6 @@
 class MealsController < ApplicationController
   before_action :set_meal, only: [:show, :edit, :update, :destroy]
+  before_action :set_image, only: [:show]
   def index
     if params[:query].present?
       @meals = Meal.search_by_name_and_description(params[:query])
@@ -23,12 +24,13 @@ class MealsController < ApplicationController
   end
 
   def show
-    set_meal
     @booking = Booking.new
+    render layout: "show"
+
+    p "======", @image
   end
 
   def edit
-    set_meal
   end
 
   def update
@@ -49,5 +51,9 @@ class MealsController < ApplicationController
 
   def set_meal
     @meal = Meal.find(params[:id])
+  end
+
+  def set_image
+    @image = @meal.background_image
   end
 end
