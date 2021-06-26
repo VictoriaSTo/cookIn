@@ -1,14 +1,26 @@
-<h2><%= @meal.name %></h1>
-<ul>
-    <li><%= link_to "Edit this meal", edit_meal_path %></li>
-</ul>
-    <p><%= @meal.description %></p>
-    <p><%= "$#{@meal.price}" %></p>
-<%= simple_form_for [@meal, @booking] do |f| %>
-  <%= f.input :date %>
-  <%= f.input :location %>
-  <%= f.submit %>
-<% end %>
-<ul>
-    <li><%= link_to "Back to list", meals_path %></li>
-</ul>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h2 class="display-4"><%= @meal.name %></h1>
+        <ul>
+          <%= link_to "Edit meal", edit_meal_path %>
+        </ul>
+        <div class="form-container">
+          <p class="lead"><%= @meal.description %></p>
+          <p class="lead"><%= "$#{@meal.price}" %></p>
+          <hr class="my-4">
+          <div class="form">
+            <%= simple_form_for [@meal, @booking] do |f| %>
+            <%= f.input :date %>
+            <%= f.input :location %>
+            <%= f.submit class: 'submit' %>
+            <div class="buttons">
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
