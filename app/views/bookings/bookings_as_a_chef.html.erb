@@ -1,6 +1,8 @@
 <div class="background-image" alt="chef">
   <h1>My Chef Bookings</h1>
-  <p class="red_button"><%= link_to "Back to my bookings", my_bookings_path %></p>
+  <div>
+    <%= link_to "Back to my bookings", my_bookings_path, class:"red_button" %>
+  </div>
   <% @bookings.each do |booking| %>
   <div class="container py-5">
     <div class="row">
