@@ -35,6 +35,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'faker'
 gem 'pg_search', '~> 2.3.0'
+gem 'rest-client'
 
 group :development, :test do
   gem 'pry-byebug'
