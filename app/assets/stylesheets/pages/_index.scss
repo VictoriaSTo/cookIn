@@ -1,2 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
+
+  body {
+    background-image: url('home_img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed, scroll;
+
+
+}
