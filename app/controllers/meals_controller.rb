@@ -3,6 +3,7 @@ class MealsController < ApplicationController
   after_action :verify_policy_scoped, only: :my_meals, unless: :skip_pundit?
   
   before_action :set_meal, only: [:show, :edit, :update, :destroy]
+  before_action :set_image, only: [:show]
   def index
     if params[:query].present?
       @meals = policy_scope(Meal).search_by_name_and_description(params[:query])
@@ -32,12 +33,13 @@ class MealsController < ApplicationController
   end
 
   def show
-    set_meal
     @booking = Booking.new
+    render layout: "show"
+
+    p "======", @image
   end
 
   def edit
-    set_meal
   end
 
   def update
@@ -53,11 +55,15 @@ class MealsController < ApplicationController
   private
 
   def meal_params
-    params.require(:meal).permit(:name, :description, :price)
+    params.require(:meal).permit(:name, :description, :meal_type, :price)
   end
 
   def set_meal
     @meal = Meal.find(params[:id])
     authorize @meal
+  end
+
+  def set_image
+    @image = @meal.background_image
   end
 end

@@ -4,6 +4,7 @@
       <div class="bg-white rounded p-3 shadow">
         <h2 class="display-4"><%= @meal.name %></h1>
         <div class="form-container">
+          <p class="lead"><%= @meal.meal_type %></p>
           <p class="lead"><%= @meal.description %></p>
           <p class="lead"><%= "$#{@meal.price}" %></p>
           <hr class="my-4">
@@ -11,7 +12,7 @@
             <%= simple_form_for [@meal, @booking] do |f| %>
             <%= f.input :date %>
             <%= f.input :location %>
-            <%= f.submit class: 'submit' %>
+            <%= f.submit class: 'red_button' %>
             <div class="buttons">
             <% end %>
             </div>
