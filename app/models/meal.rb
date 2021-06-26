@@ -1,9 +1,9 @@
 class Meal < ApplicationRecord
   TYPE_COLORS = {
-                  "Entrée" => "#F5fcff",
-                  "Main" => "#Fff7f5",
-                  "Dessert" => "#Fefff5",
-                  "Vegetarian" => "#F9fff5",
+                  "Entrée" => "orange",
+                  "Main" => "red",
+                  "Dessert" => "blue",
+                  "Vegetarian" => "green",
                 }
 
   belongs_to :user
