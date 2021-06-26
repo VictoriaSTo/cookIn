@@ -1,13 +1,19 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-6">
-      <div class="bg-white rounded p-3 shadow">
-        <h2 class="display-4"><%= @meal.name %></h1>
+      <div class="bg-white rounded p-3 shadow" style="opacity: 0.9;">
+        <h2 class="display-4"><%= @meal.name.capitalize %></h1>
+        <hr style="border-color: <%= @meal.card_colour %>;">
         <div class="form-container">
-          <p class="lead"><%= @meal.meal_type %></p>
-          <p class="lead"><%= @meal.description %></p>
-          <p class="lead"><%= "$#{@meal.price}" %></p>
+          <h6 class="lead"><%= @meal.meal_type %></h6>
           <hr class="my-4">
+          <h3 class="lead"><%= @meal.description.capitalize %></h3>
+          <hr class="my-4">
+          <h5 class="lead"><%= "$#{@meal.price}" %></h5>
+          <hr class="my-4">
+          <ul>
+            <%= link_to "Edit meal", edit_meal_path %>
+          </ul>
           <div class="form">
             <%= simple_form_for [@meal, @booking] do |f| %>
             <%= f.input :date %>

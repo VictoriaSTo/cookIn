@@ -1,23 +1,28 @@
 <div class="container" alt="chef">
 
   <div class="container">
-    <h1>All meals</h1>
+    <h1>CookIn Meals</h1>
     <div class="row">
+
       <% @meals.each do |meal| %>
+        <%= link_to meal, style:"text-decoration: none; color: black" do %>
         <div class="col mt-3">
-          <div class="card h-100" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title"><%= meal.meal_type %></h5>
-              <h5 class="card-title"><%= meal.user.name %></h5>
-              <h5 class="card-title"><%= link_to meal.name, meal_path(meal)%></h5>
-              <p class="card-text">Loren ipsum and shit, a medium-long description in which combinations of letters form words which are associated with meaning</p>
-              <h5 class="btn btn-light"> <%= link_to "Book Now", meal_path(meal)%></h5>
+            <div class="bg-white card h-100" style="width: 18rem; opacity: 0.9;">
+              <div class="card-body">
+                <h6 class="card-title"><%= meal.meal_type %></h6>
+                <hr style="border-color: <%= meal.card_colour %>;">
+                <h3 class="card-title">Chef <%= meal.user.name %>'s</h3>
+                <h3 class="card-title"><%= meal.name.capitalize %></h3>
+                <hr class="my-4">
+                <p class="card-text"><%= meal.description.capitalize %></p>
+                <hr class="my-4">
+                <h5 class="btn btn-dark"> <%= link_to "Book Now", meal_path(meal), style:"text-decoration: none; color: white" %></h5>
+              </div>
             </div>
-          </div>
         </div>
+        <% end %>
       <% end %>
+
     </div>
   </div>
  </div>
-
-
