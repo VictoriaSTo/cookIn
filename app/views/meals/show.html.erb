@@ -1,7 +1,7 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-6">
-      <div class="bg-white rounded p-3 shadow">
+      <div class="rounded p-3 shadow" style="background-color: <%= @meal.card_colour %>; opacity: 0.9;">
         <h2 class="display-4"><%= @meal.name %></h1>
         <ul>
           <%= link_to "Edit meal", edit_meal_path %>
