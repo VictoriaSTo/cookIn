@@ -6,7 +6,7 @@
           <%= simple_form_for (@meal) do |f| %>
             <%= f.input :name %>
             <%= f.input :description %>
-            <%= f.input :meal_type, label: 'Meal Type', :collection => %w[Entrée Main Side Dessert Vegetarian Vegan Other] %>
+            <%= f.input :meal_type, label: 'Meal Type', :collection => %w[Entrée Main Dessert Vegetarian] %>
             <%= f.input :price %>
             <%= f.submit class: 'red_button'%>
           <% end %>

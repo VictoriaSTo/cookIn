@@ -1,4 +1,11 @@
 class Meal < ApplicationRecord
+  TYPE_COLORS = {
+                  "Entrée" => "orange",
+                  "Main" => "red",
+                  "Dessert" => "blue",
+                  "Vegetarian" => "green",
+                }
+
   belongs_to :user
   has_many :bookings, dependent: :destroy
   validates :name, presence: true
@@ -17,5 +24,9 @@ class Meal < ApplicationRecord
     url = "https://pixabay.com/api/?key=#{pixabay_api_key}&q=#{name}+food&image_type=photo&pretty=true"
     parsed_response = JSON.parse(RestClient.get(url))
     parsed_response["hits"].present? ? parsed_response["hits"][0]["largeImageURL"] : ActionController::Base.helpers.asset_path("anton-8eG73NjiHao-unsplash.jpg")
+  end
+
+  def card_colour
+    TYPE_COLORS[meal_type] || "white"
   end
 end
